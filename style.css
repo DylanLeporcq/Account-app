@@ -1,0 +1,42 @@
+body {
+    background-image: url("pics/geofond.jpg");
+}
+
+h1 {
+    background-image: url("pics/coins.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    color: rgba(45, 57, 38, 0.9);
+}
+
+.col-md {
+    border: 1px solid black;
+}
+
+span {
+    color: white;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+select {
+     border: 3px solid #383838;
+    background: rgba(119, 239, 112, 0.9);
+     color: white;
+ }
+
+input {
+    border: 3px solid #383838;
+    background: rgba(119, 239, 112, 0.74);
+    color: white;
+}
+
+#final {
+    background: rgba(50, 50, 50, 0.8);
+    color: white;
+}

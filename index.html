@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<h1 style="font-size: 70pt">MAZE-BANK ESTIMATIONS</h1>
+
+<div class="container-fluid" style="text-align: center;">
+    <div class="column">
+        <div class="col-md" style="background: #386090; color: white; font-size: 20pt">
+            <div class="row">
+                <div class="col-md">Type</div>
+                <div class="col-md">Title</div>
+                <div class="col-md">Value</div>
+                <div class="col-md">Total</div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="row">
+                <div class="col-md" style="background: rgba(157,42,34,0.96); color: white; font-size: 14pt">Spendings</div>
+                <div class="col-md" style="background: rgba(133,81,64,0.89); color: white; font-size: 12pt">
+                    <div class="column" id="space_title_spendings">
+                        <div class="col-sm">Rent & charges</div>
+                        <div class="col-sm">Water, electricity, gas</div>
+                        <div class="col-sm">Phone & internet</div>
+                    </div>
+                </div>
+                <div class="col-md" style="background: rgba(133,81,64,0.89); color: white; font-size: 12pt">
+                    <div class="column" id="space_value_spendings">
+                        <div class="col-sm" id="rent_value">0</div>
+                        <div class="col-sm" id="water_value">0</div>
+                        <div class="col-sm" id="phone_value">0</div>
+                    </div>
+                </div>
+                <div class="col-md" style="background: rgba(133,81,64,0.89); color: white; font-size: 12pt">
+                    <div class="column"id="total_spendings">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="row">
+                <div class="col-md" style="background: rgba(91,157,46,0.96); color: white; font-size: 14pt">Incomes</div>
+                <div class="col-md" style="background: rgba(135,157,84,0.83); color: white; font-size: 12pt">
+                    <div class="column" id="space_title_incomes">
+
+                    </div>
+                </div>
+                <div class="col-md" style="background: rgba(135,157,84,0.83); color: white; font-size: 12pt">
+                    <div class="column" id="space_value_incomes">
+
+                    </div>
+                </div>
+                <div class="col-md" style="background: rgba(135,157,84,0.83); color: white; font-size: 12pt">
+                    <div class="column"id="total_incomes">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="row">
+                <div class="col-md" style="background: rgba(56,83,157,0.96); color: white; font-size: 14pt">Saving</div>
+                <div class="col-md" style="background: rgba(83,106,157,0.83); color: white; font-size: 12pt">
+                    <div class="column" id="space_title_saving">
+
+                    </div>
+                </div>
+                <div class="col-md" style="background: rgba(83,106,157,0.83); color: white; font-size: 12pt">
+                    <div class="column" id="space_value_saving">
+
+                    </div>
+                </div>
+                <div class="col-md" style="background: rgba(83,106,157,0.83); color: white; font-size: 12pt">
+                    <div class="column"id="total_saving">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="row" >
+                <div class="col-md"style="background: #386090; color: white; font-size: 14pt">Result</div>
+                <div class="col-md" id="space_result" style="background: rgba(52,52,52,0.95); color: white; font-size: 14pt"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" style="margin-top: 40px">
+    <div class="row">
+        <form>
+            <select  id="select" name="nom" size="1">
+                <option value="none" id="none" onclick="beginAdd()">-- Select a type of operation --</option>
+                <option value="Spending" id="spending" onclick="beginAdd()">Spending</option>
+                <option value="Income" id="income" onclick="beginAdd()">Income</option>
+                <option value="Saving" id="saving" onclick="beginAdd()">Saving</option>
+            </select>
+        </form>
+        <select  id="title_tap_spending" name="nom" size="1" style="display: none">
+            <option value="">-- Select a title of operation --</option>
+            <option value="Refund & credits">Refund & credit</option>
+            <option value="Home insurance">Home insurance</option>
+            <option value="Vehicle insurance">Vehicle insurance</option>
+            <option value="Health mutual">Health mutual</option>
+            <option value="Care expenses">Care expenses</option>
+            <option value="Income tax">Income tax</option>
+            <option value="Local tax">Local tax</option>
+            <option value="Shopping (month)">Shopping (month)</option>
+            <option value="Fuel">Fuel</option>
+            <option value="Sports">Sports</option>
+            <option value="Spare time">Spare time</option>
+            <option value="Other">Other ...</option>
+        </select>
+        <select  id="title_tap_income" name="nom" size="1" style="display:none;">
+            <option value="">-- Select a type of operation --</option>
+            <option value="Wage">Wage</option>
+            <option value="Aids from state">Aids from state</option>
+            <option value="Unearned income">Unearned income</option>
+            <option value="Other">Other ...</option>
+        </select>
+        <input type="text" placeholder="Type of saving" id="title_tap_saving" style="display: none">
+        <input id="value_tap" type="number" placeholder="Tap a value" style="display: none">
+        <input class="col-md" id="btn" type="submit" value="Add" style="display: none; background: #304820">
+        <input class="col-md" id="validate" type="submit" value="Validate" style="display: none; background: #304820">
+    </div>
+</div>
+
+<div id="final" style="display: none">
+    <h3 style="margin-top: 40px; text-align: center">Month results</h3>
+    <p style="font-size: 20pt; margin-left: 10px">Balance : <span id="balance"></span></p>
+    <p style="font-size: 20pt; margin-left: 10px">Money saved : <span id="money_saved"></span></p>
+    <p style="font-size: 20pt; margin-left: 10px">Title : <span id="title"></span></p>
+    <p style="font-size: 20pt; margin-left: 10px; font-weight: bold">Resume :
+        <p style="font-size: 20pt; margin-left: 10px; font-weight: bold">You've done a <span id="resume1"></span> month. I think you can now <span id="resume2"></span>. We are very
+            <span id="resume3"></span>to have a client like you. You have <span id="resume4"></span>€ in saving, so you can
+            buy <span id="resume5"></span> if you want. The life is short, <span id="resume6"></span>.<span id="resume7"></span>.<br>
+            <span id="resume8"></span></p>
+    </p>
+</div>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</body>
+</html>
